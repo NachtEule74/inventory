@@ -6,9 +6,9 @@
 ⚡ Optimierte ECS-DatenstrukturDas Plugin nutzt das Hytale Entity-Component-System (ECS) in einer performanten "Event-Only" Konfiguration:Memory-Efficient: Nutzt ConcurrentHashMap für thread-sicheren Zugriff.Lifecycle-Managed: Automatisches Speichern beim Server-Shutdown oder Disconnect, um Datenverlust zu verhindern.
 
 📂 Projekt-Struktur
-com.eule.inventoryCore: Initialisiert den Daten-Manager und die Event-Busse
-com.eule.inventory.dataStorage: Kernlogik des InventoryDataManager
-com.eule.inventory.listenersBridge: Verbindet Hytale-Events (Login/Logout) mit der Daten-Ebene.
+com.eule.inventory: Initialisiert den Daten-Manager und die Event-Busse
+com.eule.inventory.data: Kernlogik des InventoryDataManager
+com.eule.inventory.listeners: Verbindet Hytale-Events (Login/Logout) mit der Daten-Ebene.
 
 🛠 Integration & TechnikInstallationLege die inventory.jar in deinen plugins Ordner.Stelle sicher, dass die UUIDComponent in deinem Server-Build verfügbar ist.Das Plugin registriert sich automatisch beim EventBus und beginnt mit der Überwachung der Spieler-Daten.Daten-Abfrage (API für andere Plugins)Andere Plugins können die freigeschalteten Seiten direkt über die Instanz abrufen, um z.B. Items nur in bestimmte Taschen zu legen:Javaint pages = inventoryPlugin.getInstance().getDataManager().getPages(playerUUID);
 🎨 UI-Logik (Assets)Da keine Commands genutzt werden, erfolgt der Aufruf des Inventars über die Standard-Hytale UI-Bindings. Das Plugin liefert hierfür die nötigen Daten-Kontexte (unlockedPages), die in den .json UI-Templates verwendet werden können, um Tabs zu sperren oder freizugeben.
