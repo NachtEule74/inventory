@@ -1,3 +1,30 @@
+ENGLISH:
+🛡️ THE PLUGIN IS RUNNING BUT I CAN'T SEE THE UI CHANGES!!!
+
+🛡️ Hytale Metin2-Style Inventory SystemA specialized backend and UI system for Hytale that extends the classic inventory with a tab-based structure. This plugin focuses on data management and automated unlocking logic without cluttering the chat with commands.
+
+🚀 Core Features
+🗂️ Automated Inventory Expansion: The system manages up to four independent inventory pages. Access is controlled not via commands, but directly through player data.
+🔒 Status-Based UI (Headless Logic)The UI independently determines which tabs are available based on the data provided by the plugin.UUID Binding: All progress is permanently tied to the player’s UUID.Smart Loading: Data is loaded asynchronously immediately upon login (PlayerConnectEvent) to prevent delays when opening the inventory.
+⚡ Optimized ECS Data Structure The plugin uses the Hytale Entity-Component-System (ECS) in a high-performance “Event-Only” configuration: Memory-Efficient: Uses ConcurrentHashMap for thread-safe access. Lifecycle-Managed: Automatic saving upon server shutdown or disconnect to prevent data loss.
+
+📂 Project Structure
+com.eule.inventory: Initializes the data manager and event buses
+com.eule.inventory.data: Core logic of the InventoryDataManager
+com.eule.inventory.listeners: Connects Hytale events (login/logout) to the data layer.
+
+🛠 Integration & Technical SetupPlace the inventory.jar file in your plugins folder.Make sure the UUIDComponent is available in your server build. The plugin automatically registers with the EventBus and begins monitoring player data.Data Query (API for Other Plugins)Other plugins can retrieve the unlocked pages directly via the instance, for example, to place items only in specific pockets:Javaint pages = inventoryPlugin.getInstance().getDataManager().getPages(playerUUID);
+🎨 UI Logic (Assets)Since no commands are used, the inventory is accessed via the standard Hytale UI bindings. The plugin provides the necessary data contexts (unlockedPages) for this, which can be used in the .json UI templates to lock or unlock tabs.
+
+🤝 ContributeSince the command layer has been removed, the focus is now on expanding storage options (e.g., SQL connection or JSON files). Pull requests for new storage providers are very welcome.
+
+🛡️ License
+Anyone can use this project. I created it with AI and don’t really know much about programming, but a Hytale plugin like this would be awesome.
+
+
+GERMAN:
+🛡️ PLUGIN LÄUFT ABER SEHE DIE UI ÄNDERUNGEN NICHT!!!
+
 🛡️ Hytale Metin2-Style Inventory SystemEin spezialisiertes Backend- und UI-System für Hytale, das das klassische Inventar um eine tab-basierte Struktur erweitert. Dieses Plugin konzentriert sich auf die Datenhaltung und automatisierte Freischalt-Logik, ohne den Chat mit Befehlen zu belasten.
 
 🚀 Kern-Features
