@@ -1,0 +1,10 @@
+{
+  "Group": "com.eule",
+  "Name": "inventory",
+  "Version": "1.0.0",
+  "Description": "A Hytale server mod",
+  "Authors": [{"Name": "Eule"}],
+  "Main": "com.eule.inventory.inventoryPlugin",
+  "LoadOrder": "POSTWORLD",
+  "IncludesAssetPack": true
+}

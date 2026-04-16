@@ -1,0 +1,40 @@
+{
+  "id": "metin_inventory",
+  "components": [
+    {
+      "type": "Window",
+      "title": "Lagerraum",
+      "width": 400,
+      "height": 500,
+      "children": [
+        {
+          "type": "TabContainer",
+          "tabs": [
+            { "label": "I", "onClick": "openPage(0)" },
+            {
+              "label": "II",
+              "icon": "{{ unlockedPages >= 1 ? 'icons/page_2.png' : 'icons/lock.png' }}",
+              "onClick": "{{ unlockedPages >= 1 ? 'openPage(1)' : 'requestUnlock(1)' }}"
+            },
+            {
+              "label": "III",
+              "icon": "{{ unlockedPages >= 2 ? 'icons/page_3.png' : 'icons/lock.png' }}",
+              "onClick": "{{ unlockedPages >= 2 ? 'openPage(2)' : 'requestUnlock(2)' }}"
+            },
+            {
+              "label": "IV",
+              "icon": "{{ unlockedPages >= 3 ? 'icons/page_4.png' : 'icons/lock.png' }}",
+              "onClick": "{{ unlockedPages >= 3 ? 'openPage(3)' : 'requestUnlock(3)' }}"
+            }
+          ]
+        },
+        {
+          "type": "ItemGrid",
+          "rows": 9,
+          "columns": 5,
+          "binding": "inventory_page_{{currentPage}}"
+        }
+      ]
+    }
+  ]
+}
