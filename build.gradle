@@ -16,7 +16,7 @@ repositories {
 
 dependencies {
     // Hytale Server API from official Maven repository
-    //compileOnly 'Server-2026.04.08-1dcf1b2'
+    compileOnly files('libs/HytaleServer.jar')
     // JSR305 annotations (@Nonnull, @Nullable)
     compileOnly 'com.google.code.findbugs:jsr305:3.0.2'
     implementation 'com.google.code.gson:gson:2.10.1'
